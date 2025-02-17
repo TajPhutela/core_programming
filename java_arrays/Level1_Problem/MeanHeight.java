@@ -1,18 +1,26 @@
+package Level1;
 import java.util.Scanner;
 
-public class MeanHeight{
+class MeanHeight {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        // Create Scanner object
+        Scanner input = new Scanner(System.in);
+
+        // Define an array to store heights
         double[] heights = new double[11];
-        double sum = 0;
-        System.out.println("Enter the heights of 11 football players:");
+        double sum = 0.0;
+
+        // Take user input for heights
         for (int i = 0; i < heights.length; i++) {
-            System.out.print("Player " + (i + 1) + " height: ");
-            heights[i] = sc.nextDouble();
+            System.out.print("Enter height of player " + (i + 1) + " (in cm): ");
+            heights[i] = input.nextDouble();
             sum += heights[i];
         }
-        sc.close();
-        double meanHeight = sum / heights.length;
-        System.out.printf("The mean height of the football team is: %.2f meters%n", meanHeight);
+
+        // Calculate mean height
+        double mean = sum / heights.length;
+
+        // Display the result
+        System.out.println("Mean height of the football team: " + mean + " cm");
     }
 }

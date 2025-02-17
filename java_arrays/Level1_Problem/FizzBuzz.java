@@ -1,19 +1,19 @@
-import java.util.*;
+package Level1;
+import java.util.Scanner;
 
-public class FizzBuzz {
+class FizzBuzz {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        
-        System.out.print("Enter a positive integer: ");
-        int number = sc.nextInt();
-        
-        if (number <= 0) {
-            System.out.println("Error: Please enter a positive integer.");
-            return;
-        }
-        
+        // Create Scanner object
+        Scanner input = new Scanner(System.in);
+
+        // Take user input
+        System.out.print("Enter a number: ");
+        int number = input.nextInt();
+
+        // Define an array to store results
         String[] results = new String[number + 1];
-        
+
+        // Generate FizzBuzz results
         for (int i = 0; i <= number; i++) {
             if (i % 3 == 0 && i % 5 == 0) {
                 results[i] = "FizzBuzz";
@@ -22,14 +22,13 @@ public class FizzBuzz {
             } else if (i % 5 == 0) {
                 results[i] = "Buzz";
             } else {
-                results[i] = String.valueOf(i);
+                results[i] = Integer.toString(i);
             }
         }
-        
+
+        // Display results
         for (int i = 0; i <= number; i++) {
             System.out.println("Position " + i + " = " + results[i]);
         }
-        
-        sc.close();
     }
 }
